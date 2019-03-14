@@ -33,6 +33,7 @@ export class HeroesComponent implements OnInit {
 
   onSelect(hero: Hero): void {
     this.selectedHero = hero;
+    this.heroService.addMessage("Item selected: " + hero.name);
   }
 
   // synchronously
@@ -42,6 +43,6 @@ export class HeroesComponent implements OnInit {
 
   // best practice > Async
   getHeroesAsynchronously(): void {
-    this.heroesFromServiceAsync = this.heroService.getHeroesAsynchronously().subscribe(heroes => this.heroesFromServiceAsync = heroes);;
+    this.heroService.getHeroesAsynchronously().subscribe(heroes => this.heroesFromServiceAsync = heroes);
   }
 }

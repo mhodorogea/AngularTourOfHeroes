@@ -18,14 +18,15 @@
 
 </div>
 
-<h2>My Heroes</h2>
-<ul class="heroes">
-  <li *ngFor="let hero of heroes" (click)="onSelect(hero)" [class.selected]="hero === selectedHero">
-    <span class="badge">{{hero.id}}</span> {{hero.name}}
-  </li>
-</ul>
-
-<div style="background-color: gray"> 
+<div style="background-color: gainsboro">
+  <h2>My Heroes FROM MOCK</h2>
+  <ul class="heroes">
+    <li *ngFor="let hero of heroes" (click)="onSelect(hero)" [class.selected]="hero === selectedHero">
+      <span class="badge">{{hero.id}}</span> {{hero.name}}
+    </li>
+  </ul>
+</div>
+<div style="background-color: gray">
   <h2>My Heroes FROM THE SERVICE : SYNC</h2>
   <ul class="heroes">
     <li *ngFor="let hero of heroesFromServiceSync" (click)="onSelect(hero)" [class.selected]="hero === selectedHero">
@@ -35,7 +36,7 @@
 </div>
 
 
-<div style="background-color: red"> 
+<div style="background-color: red">
   <h2>My Heroes FROM THE SERVICE : ASYNC</h2>
   <ul class="heroes">
     <li *ngFor="let hero of heroesFromServiceAsync" (click)="onSelect(hero)" [class.selected]="hero === selectedHero">
@@ -43,6 +44,7 @@
     </li>
   </ul>
 </div>
+<!--detail component-->
 <div *ngIf="selectedHero" style="background-color: yellowgreen">
   <h1>
     Master / Détail
